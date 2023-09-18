@@ -24,7 +24,7 @@ jobs:
       run: npm install
 
     - name: Run generate task
-      run: npm run generate
+      run: npm run build
 
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.1.1
