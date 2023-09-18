@@ -1,0 +1,32 @@
+name: Node-CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-master:
+
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+    - name: Copy code files to container
+      uses: actions/checkout@v3
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16.x'
+
+    - name: Install npm dependencies
+      run: npm install
+
+    - name: Run generate task
+      run: npm run generate
+
+    - name: Deploy to Server
+      uses: easingthemes/ssh-deploy@v2.1.1
+    
+    timeout-minutes: 3
