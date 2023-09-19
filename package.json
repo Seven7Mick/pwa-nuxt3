@@ -13,7 +13,11 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@vite-pwa/assets-generator": "^0.0.10",
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
     "nuxt": "^3.7.3",
     "vite-plugin-pwa": "^0.16.5"
+  },
+  "dependencies": {
+    "sass": "^1.67.0"
   }
 }
